@@ -138,4 +138,17 @@ function mediaRating(genre = 'drama'){
 console.log(mediaRating('fantasy'))
 
 
+//Creiamo una funzione che restituisca la lista di tutti i generi dei film, senza che questi si ripetano.
+function allGenre(){
+    let generi = []
+    for (let elem of arrayFilms) {
+        
+        if(!generi.includes(elem.genre)){
+            generi.push(elem.genre)
+        }
+    }
+    return `I generi dei film del mio array sono: ${generi}`
+}
+
+console.log(allGenre())
 
