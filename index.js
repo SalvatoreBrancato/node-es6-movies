@@ -117,15 +117,16 @@ const filterType = arrayFilms.map(x=> {
     if(x.type === 'movie'){
         const film = new Movie(x.title, x.year, x.genre, x.rating, x.type);
         console.log(film.toString());
+        return film;
     } else if (x.type === 'tv'){
         const serieTV = new TvSerie(x.title, x.year, x.genre, x.rating, x.type, x.seasons);
         console.log(serieTV.toString());
+        return serieTV;
     }
 })
 
 //Creiamo una funzione che restituisca la media dei voti di tutti i film per un determinato genere. 
 //Prevedere un argomento per la lista dei film ed uno per il genere.
-
 function mediaRating(genre = 'drama'){
     let mediaFilm = 0;
     for (const elem of arrayFilms) {
@@ -152,3 +153,15 @@ function allGenre(){
 
 console.log(allGenre())
 
+//Creiamo una funzione che filtri i film in base ad un genere passato come argomento e ne ritorni un array con all’interno il risultato della funzione toString() di ogni film.
+function filterGenre(filtroClassi, genere = 'crime'){
+    let arrayFiltroGenere = [];
+    for (let element of filtroClassi) {
+        if (element.genre === genere && element.type === 'movie') {
+            arrayFiltroGenere.push(element.toString())
+        }
+    }
+    return arrayFiltroGenere
+}
+
+console.log(filterGenre(filterType))
