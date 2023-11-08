@@ -22,3 +22,15 @@ const arrayFilms = [
         seasons: 5,
       },
 ]
+
+//Creare una classe Movie che contenga le informazioni sopra indicate.
+class Movie {
+    constructor(title, year, genre, rating, type){
+        this.title = title;
+        this.year = year;
+        this.genre = genre;
+        this.rating = rating;
+        this.type = type;
+    }
+}
+
