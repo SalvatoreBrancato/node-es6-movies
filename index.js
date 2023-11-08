@@ -52,8 +52,16 @@ class TvSerie extends Movie{
 }
 
 
-//prova classi
-const film = new TvSerie('titolo', 2020, 'genere', 9.5, 'tipo', 2);
-console.log(film.toString())
-
 //Tramite la funzione .map(), creare un nuovo array dove per ogni elemento dell’array di oggetti viene creata un istanza della classe Movie o TvSerie in base al type e salvata nel nuovo array.
+const filterType = arrayFilms.map(x=> {
+    if(x.type === 'movie'){
+        const film = new Movie(x.title, x.year, x.genre, x.rating, x.type);
+        console.log(film);
+    } else if (x.type === 'series'){
+        const serieTV = new TvSerie(x.title, x.year, x.genre, x.rating, x.type, x.season);
+        console.log(serieTV);
+    }
+})
+
+//console.log(filterType)
+
