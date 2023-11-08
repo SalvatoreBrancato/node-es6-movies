@@ -85,6 +85,14 @@ const arrayFilms = [
 
 //Creare una classe Movie che contenga le informazioni sopra indicate.
 class Movie {
+    //BONUS:
+    //Rendere le proprietà delle classi private e creare dei setter e dei getter per potervi accedere.
+    #title;
+    #year;
+    #genre;
+    #rating;
+    #type;
+
     constructor(title, year, genre, rating, type){
         this.title = title;
         this.year = year;
@@ -93,6 +101,48 @@ class Movie {
         this.type = type;
     }
     
+    //GETTERS----------------------------------------------------
+    get title(){
+        return this.#title;
+    }
+
+    get year(){
+        return this.#year;
+    }
+
+    get genre(){
+        return this.#genre;
+    }
+
+    get rating(){
+        return this.#rating;
+    }
+
+    get type(){
+        return this.#type;
+    }
+
+    //SETTERS-----------------------------------------------------
+    set title(value){
+        this.#title = value;
+    }
+
+    set year(value){
+        this.#year = value;
+    }
+
+    set genre(value){
+        this.#genre = value;
+    }
+
+    set rating(value){
+        this.#rating = value;
+    }
+
+    set type(value){
+        this.#type = value;
+    }
+
     //Entrambe le classi dovranno avere un metodo toString() che ritorni una stringa con i dati del film.
     toString(){
         return `${this.title} è un ${this.type} di genere ${this.genre}. E' stato rilasciato nel ${this.year} ed ha avuto un voto di ${this.year}`
@@ -101,9 +151,19 @@ class Movie {
 
 //Creare una classe TvSeries che estenda la classe Movie e ne aggiunta la proprietà seasons.
 class TvSerie extends Movie{
+    #season;
+
     constructor(title, year, genre, rating, type, seasons){
         super(title, year, genre, rating, type);
         this.season = seasons;
+    }
+
+    get season(){
+        return this.#season;
+    }
+
+    set season(value){
+        this.#season = value;
     }
 
     toString(){
@@ -165,3 +225,5 @@ function filterGenre(filtroClassi, genere = 'crime'){
 }
 
 console.log(filterGenre(filterType))
+
+
